@@ -1,0 +1,17 @@
+server {
+  listen 0.0.0.0:80;
+
+  # Este es el directorio donde debe estar el build de la web.
+  root /var/www/freez.gq;
+
+  index index.html index.htm; # El archivo debe ser uno de estos, normalmente index.html
+
+  server_name freez.gq;
+  access_log /var/log/nginx/freez.gq.access.log;
+  error_log /var/log/nginx/freez.gq.error.log debug;
+
+  location / {
+    try_files $uri $uri/ /index.html;
+  } # Para que el enrutamiento con React funcione.
+}
+

@@ -1,0 +1,13 @@
+[Unit]
+Description=Auth main api server. Freez
+
+[Service]
+EnvironmentFile=-/home/Freez/Auth/
+ExecStart=/home/Freez/Auth/start.sh
+WorkingDirectory=/home/Freez/Auth
+LimitNOFILE=4096
+IgnoreSIGPIPE=false
+KillMode=process
+
+[Install]
+WantedBy=multi-user.target
